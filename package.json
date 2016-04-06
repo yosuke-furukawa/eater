@@ -6,7 +6,8 @@
   "bin": "./bin/eater.js",
   "scripts": {
     "test": "node --require ./test/enable-power-assert.js ./bin/eater.js --dir test/core --ext js",
-    "cov": "nyc npm test"
+    "cov": "nyc npm test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "test",
@@ -19,6 +20,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.9",
     "espower-loader": "^1.0.0",
     "nyc": "^6.1.1",
     "power-assert": "^1.3.1"
