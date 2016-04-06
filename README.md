@@ -34,14 +34,14 @@ $ eater
 
 ## If you are power-assert user
 
-1. install power-assert and espower-loader
+### 1. install power-assert and espower-loader
 
 ```
 $ npm install eater -D
 $ npm install power-assert espower-loader -D
 ```
 
-2. enable power-assert
+### 2. enable power-assert
 
 ```js
 // script/enable-power-assert.js
@@ -51,7 +51,7 @@ require('espower-loader')({
 });
 ```
 
-3. run test with require
+### 3. run test with require
 
 ```
 $ node --require ./script/enable-power-assert.js node_modules/eater/bin/eater.js
@@ -59,13 +59,13 @@ $ node --require ./script/enable-power-assert.js node_modules/eater/bin/eater.js
 
 ## Coverage
 
-1. install nyc instead of istanbul
+### 1. install nyc instead of istanbul
 
 ```
 $ npm install nyc -D
 ```
 
-2. run test with nyc
+### 2. run test with nyc
 
 ```
 $ nyc eater
