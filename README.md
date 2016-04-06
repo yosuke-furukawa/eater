@@ -32,6 +32,8 @@ assert(1 === 2); // always failure
 $ eater
 ```
 
+![image](./images/screenshot.png)
+
 ## If you are power-assert user
 
 ### 1. install power-assert and espower-loader
