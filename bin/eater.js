@@ -7,8 +7,6 @@ var ext = argv.ext || '.js';
 var help = argv.help;
 var version = argv.version || argv.v;
 
-console.log(argv);
-
 if (help) {
   console.log(`
     eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--mode test report mode]
@@ -32,3 +30,7 @@ if (mode === 'tap') {
 
 const eater = new Eater(new Reporter(), dir, ext);
 eater.eat();
+
+eater.on('err', () => {
+  process.exit(1);
+});

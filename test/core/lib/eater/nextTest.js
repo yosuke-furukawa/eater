@@ -5,7 +5,7 @@ const mockReporter = {
     // do nothing
   },
   reportSuccess: (name) => {
-    assert(name === './test/fixture/success.j');
+    assert(name === './test/fixture/success.js');
   },
 };
 const eater = new Eater(mockReporter, 'test/core', '.nosuchfiles');
