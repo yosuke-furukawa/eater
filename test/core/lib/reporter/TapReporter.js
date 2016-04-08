@@ -32,11 +32,17 @@ reporter.reportSuccess('hogefuga');
 
 const child = {
   stdout: {
+    on: (type, func) => {
+      assert(type === 'data');
+    },
     pipe: (obj) => {
       assert.ifError('Should not be reached here');
     }
   },
   stderr: {
+    on: (type, func) => {
+      assert(type === 'data');
+    },
     pipe: (obj) => {
       assert.ifError('Should not be reached here');
     }
