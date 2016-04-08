@@ -1,4 +1,6 @@
 *.swp
+*.swo
 node_modules
 .nyc_output
 npm-debug.log
+coverage
