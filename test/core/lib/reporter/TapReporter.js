@@ -34,6 +34,7 @@ const child = {
   stdout: {
     on: (type, func) => {
       assert(type === 'data');
+      func();
     },
     pipe: (obj) => {
       assert.ifError('Should not be reached here');
@@ -42,6 +43,7 @@ const child = {
   stderr: {
     on: (type, func) => {
       assert(type === 'data');
+      func();
     },
     pipe: (obj) => {
       assert.ifError('Should not be reached here');
