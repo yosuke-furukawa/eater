@@ -12,9 +12,9 @@ If test file outputs `stderr` message, the test failed.
 
 #Features
 
-- Multi-process, All eater test files run in separeted process. And eater don't launch process more than CPU-core number.
-- Easy mock, an eater test does not affect the other tests. Sometimes, mock object kills your test.
-- Happy async, eater aims to be happy async test. Each eater file will run in `Node.js` child_process, so the tests are always async first. if your tests mix sync and async tests, you will have a headache to maintain the tests.
+- Multi-process: All eater test files run as separate processes and eater does not launch too many processes more than CPU-core number.
+- Easy mock: An eater test does not affect the other tests, but mock object sometimes kills your test.
+- Happy async: eater aims is here to handle async test well. Each eater files will run in `Node.js` child_process, so the tests always should be async first. If your tests mix sync and async tests, you will have a headache to maintain the tests.
 
 #How to use
 
@@ -40,16 +40,16 @@ $ eater
 
 ![image](./images/screenshot.png)
 
-## If you are power-assert user
+## If you are [power-assert](https://github.com/power-assert-js/power-assert) user
 
-### 1. install power-assert and espower-loader
+### 1. install `power-assert` and `espower-loader`
 
 ```
 $ npm install eater -D
 $ npm install power-assert espower-loader -D
 ```
 
-### 2. enable power-assert
+### 2. enable `power-assert`
 
 ```js
 // script/enable-power-assert.js
@@ -59,7 +59,7 @@ require('espower-loader')({
 });
 ```
 
-### 3. run test with require
+### 3. run tests with `--require`
 
 ```
 $ node --require ./script/enable-power-assert.js node_modules/eater/bin/eater.js
@@ -67,14 +67,14 @@ $ node --require ./script/enable-power-assert.js node_modules/eater/bin/eater.js
 
 ## If you are babel(JSX) user
 
-### 1. install babel-register
+### 1. install `babel-register`
 
 ```
 $ npm install eater -D
 $ npm install babel-register -D
 ```
 
-### 2. enable babel
+### 2. enable `babel`
 
 ```js
 // script/enable-babel.js
@@ -86,7 +86,7 @@ require('babel-register')({
 });
 ```
 
-### 3. run test with require
+### 3. run tests with `--require`
 
 ```
 $ node --require ./script/enable-babel.js node_modules/eater/bin/eater.js
