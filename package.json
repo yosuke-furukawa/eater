@@ -2,10 +2,12 @@
   "name": "eater",
   "version": "1.0.3",
   "description": "eater is EAsy Test runnER",
-  "main": "lib/eater.js",
+  "main": "index.js",
   "bin": "./bin/eater.js",
   "scripts": {
-    "test": "node --require ./test/enable-power-assert.js ./bin/eater.js --dir test/core --ext js",
+    "test": "npm run test:core && npm run test:runner",
+    "test:core": "node --require ./test/enable-power-assert.js ./bin/eater.js --dir test/core --ext js",
+    "test:runner": "node --require ./test/enable-power-assert.js --require ./test/runner/context.js ./bin/eater.js --dir test/runner --ext js",
     "cov": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
