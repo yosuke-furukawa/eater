@@ -10,6 +10,9 @@ const mockReporter = {
   reportSuccess: (name) => {
     assert(name === './test/fixture/success.js');
   },
+  reportFinish: (hasAnyError) => {
+    assert(!hasAnyError);
+  }
 };
 const eater = new Eater(mockReporter, 'test/core');
 eater.files = ['./test/fixture/success.js'];

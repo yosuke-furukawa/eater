@@ -12,6 +12,9 @@ const mockReporter = {
   reportFailure: (name) => {
     assert(name === 'test/fixture/error.js');
   },
+  reportFinish: (hasAnyError) => {
+    assert(hasAnyError);
+  }
 };
 const eater = new Eater(mockReporter, 'test/fixture', 'error.js');
 eater.eat();
