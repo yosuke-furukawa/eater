@@ -16,7 +16,11 @@ const mockReporter = {
     assert(hasAnyError);
   }
 };
-const eater = new Eater(mockReporter, 'test/fixture', 'error.js');
+const eater = new Eater({
+  reporter: mockReporter, 
+  dir: 'test/fixture', 
+  ext: 'error.js',
+});
 eater.eat();
 eater.on('err', (hasAnyError) => {
   assert(hasAnyError === true);

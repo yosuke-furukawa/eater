@@ -9,14 +9,14 @@ const mockReporter = {
   },
   reportFinish: (hasAnyError) => {
     assert(!hasAnyError);
-  }
+  },
 };
 const eater = new Eater({
   reporter: mockReporter, 
   dir: 'test/core', 
   ext: '.nosuchfiles',
+  procs: 10
 });
-eater.files = ['./test/fixture/success.js'];
-eater.nextTest('./test/fixture/success.js');
 
+assert(eater.procs === 10);
 
