@@ -1,1 +1,1 @@
-hogehoge
+console.log('hogehoge');

@@ -11,6 +11,10 @@ const mockReporter = {
     assert(!hasAnyError);
   },
 };
-const eater = new Eater(mockReporter, 'test/core', '.nosuchfiles');
+const eater = new Eater({
+  reporter: mockReporter, 
+  dir: 'test/core', 
+  ext: '.nosuchfiles',
+});
 eater.nextTest('./test/fixture/success.js');
 

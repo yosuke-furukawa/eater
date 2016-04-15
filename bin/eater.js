@@ -5,16 +5,18 @@ var mode = argv.mode || 'default';
 var reporter = argv.reporter;
 var dir = argv.dir || 'test/';
 var ext = argv.ext || '.js';
+var procs = Number(argv.procs) || 0;
 var help = argv.help || argv.h;
 var version = argv.version || argv.v;
 
 function showHelp() {
   console.log(`
-    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--mode test report mode] [--reporter fooreporter]
+    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--mode test report mode] [--reporter fooreporter] [--procs max process number default cpu core num]
     eater --dir test/lib
     eater --dir spec --ext .js --mode tap
     eater --dir test/lib --ext .test.js --mode tap
-    eater --dir test/lib --ext .test.js --reporter 
+    eater --dir test/lib --ext .test.js --reporter SomeCustomReporter
+    eater --dir test/lib --ext .test.js --procs 10
   `);
   process.exit(0);
 }
@@ -43,7 +45,12 @@ if (reporter) {
   }
 }
 
-const eater = new Eater(new Reporter(), dir, ext);
+const eater = new Eater({
+  reporter: new Reporter(),
+  dir: dir,
+  ext: ext,
+  procs: procs,
+});
 eater.eat();
 
 eater.on('err', () => {
