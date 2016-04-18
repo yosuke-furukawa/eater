@@ -62,7 +62,7 @@ require('espower-loader')({
 ### 3. run tests with `--require`
 
 ```
-$ node --require ./script/enable-power-assert.js node_modules/eater/bin/eater.js
+$ eater --require ./script/enable-power-assert.js
 ```
 
 ## If you are babel(JSX) user
@@ -89,14 +89,14 @@ require('babel-register')({
 ### 3. run tests with `--require`
 
 ```
-$ node --require ./script/enable-babel.js node_modules/eater/bin/eater.js
+$ eater --require ./script/enable-babel.js
 ```
 
 Note: if you are power-assert and babel user:
 
 ```
 $ npm install espower-babel -D
-$ node --require espower-babel/guess node_modules/eater/bin/eater.js
+$ eater --require espower-babel/guess
 ```
 
 
