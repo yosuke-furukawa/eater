@@ -1,0 +1,7 @@
+{
+  "require":[
+    "./test/enable-power-assert.js",
+    "./test/runner/context.js",
+  ],
+  "ext": 'js'
+}

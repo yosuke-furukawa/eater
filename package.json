@@ -6,9 +6,9 @@
   "bin": "./bin/eater.js",
   "scripts": {
     "test": "npm run test:core && npm run test:runner",
-    "test:core": "./bin/eater.js --require ./test/enable-power-assert.js --dir test/core --ext js",
-    "test:runner": "./bin/eater.js --require ./test/enable-power-assert.js --require ./test/runner/context.js --dir test/runner --ext js",
-    "test:babel": "./bin/eater.js --dir test/babel --ext js",
+    "test:core": "./bin/eater.js --dir test/core",
+    "test:runner": "./bin/eater.js --dir test/runner",
+    "test:babel": "./bin/eater.js --dir test/babel",
     "cov": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
