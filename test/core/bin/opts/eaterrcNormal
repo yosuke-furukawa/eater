@@ -1,0 +1,6 @@
+{
+  "require": [
+    "test/fixture/success.js",
+    "colo",
+  ],
+}
