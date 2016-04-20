@@ -113,3 +113,45 @@ $ npm install nyc -D
 ```
 $ nyc eater
 ```
+
+## eater runner settings
+
+eater reads the arguments from settings.
+
+- package.json
+- .eaterrc
+
+### package.json
+
+```js
+{
+  "name": "eaterDemo",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "eater"
+  },
+  "eater": {
+    "dir": "test/core",
+    "mode": "tap",
+    "require": [
+      "./enable-power-assert.js",
+      "./enable-jsx.js"
+    ]
+  }
+}
+```
+
+### .eaterrc
+
+.eaterrc is JSON5 format so you can write comment and trailing commas.
+
+```js
+{
+  mode: "tap",
+  dir: "test/core",
+  require: [
+    "./enable-power-assert.js",
+    "./enable-jsx.js",
+  ],
+}
+```
