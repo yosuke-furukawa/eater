@@ -18,5 +18,6 @@ testRejectPromise().then(() => {
 
 process.on('uncaughtException', (e) => {
   assert.ok(e);
+  assert(e.stack.indexOf('test/core/promises/testPromiseUnhandledRejection.js') >= 0);
 });
 
