@@ -4,6 +4,8 @@ Eater
 [![Build Status](https://travis-ci.org/yosuke-furukawa/eater.svg?branch=master)](https://travis-ci.org/yosuke-furukawa/eater)
 [![Coverage Status](https://coveralls.io/repos/github/yosuke-furukawa/eater/badge.svg?branch=master)](https://coveralls.io/github/yosuke-furukawa/eater?branch=master)
 
+![logo](./images/eater.png)
+
 Eater is **Ea** sy **t** est runn **er** .
 Eater has one simple rule.
 
