@@ -4,6 +4,9 @@ const mockReporter = {
   setChildProc: (child) => {
     // do nothing
   },
+  reportTestName: (name) => {
+    // do nothing
+  },
   reportFileNumber: (num) => {
     // do nothing
   },

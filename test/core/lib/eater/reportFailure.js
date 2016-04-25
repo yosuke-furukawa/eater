@@ -4,6 +4,9 @@ const mockReporter = {
   setChildProc: (child) => {
     // do nothing
   },
+  reportTestName: (name) => {
+    // do nothing
+  },
   reportFailure: (name) => {
     assert(name === './test/fixture/error.js');
   },

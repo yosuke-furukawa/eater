@@ -14,6 +14,11 @@ console.log = (message) => {
 
 reporter.reportTestName('foobarbuz');
 
+console.log = (message) => {
+  assert.ifError('Should not be reached here');
+};
+
+reporter.reportSubTestName('foobarbuz');
 
 console.log = (message) => {
   assert(message.indexOf('not ok') !== -1);
@@ -29,6 +34,19 @@ console.log = (message) => {
 
 reporter.reportSuccess('hogefuga');
 
+console.log = (message) => {
+  assert(message.indexOf('not ok') !== -1);
+  assert(message.indexOf('foobarbuz') !== -1);
+};
+
+reporter.reportSubFailure('foobarbuz');
+
+console.log = (message) => {
+  assert(message.indexOf('ok') !== -1);
+  assert(message.indexOf('hogefuga') !== -1);
+};
+
+reporter.reportSubSuccess('hogefuga');
 
 const child = {
   stdout: {

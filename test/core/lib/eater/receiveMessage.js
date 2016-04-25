@@ -7,11 +7,15 @@ const mockReporter = {
   reportTestName: (name) => {
     // do nothing
   },
-  reportSuccess: (name) => {
-    assert(name === './test/fixture/success.js');
+  reportSubTestName: (name, parent) => {
+    assert(parent === './test/fixture/runner.js');
+    assert(name === 'assert truthy');
   },
-  reportFinish: (hasAnyError) => {
-    assert(!hasAnyError);
+  reportSuccess: (name) => {
+    assert(name === './test/fixture/runner.js');
+  },
+  reportSubSuccess: (name) => {
+    assert(name === 'assert truthy');
   },
 };
 const eater = new Eater({
@@ -19,5 +23,4 @@ const eater = new Eater({
   dir: 'test/core', 
   ext: '.nosuchfiles',
 });
-eater.nextTest('./test/fixture/success.js');
-
+eater.nextTest('./test/fixture/runner.js');
