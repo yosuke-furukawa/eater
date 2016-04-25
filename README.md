@@ -68,6 +68,8 @@ require('espower-loader')({
 $ eater --require ./script/enable-power-assert.js
 ```
 
+![power-assert](./images/powerassert.png)
+
 ## If you are babel(JSX) user
 
 ### 1. install `babel-register`
@@ -157,4 +159,39 @@ eater reads the arguments from settings.
     "./enable-jsx.js",
   ],
 }
+```
+
+### runner
+
+If you would like to use test runner, eater has `test` function.
+
+```js
+const calc = require('../foo/bar/calc');
+const test = require('eater/runner').test;
+const assert = require('assert');
+
+test('give 2 arguments return sum', (done) => {
+  const result = calc.sum(1, 2);
+  assert(result === 3);
+  done(); // eater is async friendly, you need to call done regardless of async / sync test.
+});
+
+test('give 2 arguments return sum on async', (done) => {
+  const result = calc.sumAsync(1, 2);
+  result.then((value) => {
+    assert(value === 3)
+    done();
+  });
+});
+
+test('you need to failed test, you should use fail', (done, fail) => {
+  const result = calc.sumAsync(1, 2);
+  result.then((value) => {
+    assert(1 === 2)
+    fail('should not be reached');
+  }).catch((e) => {
+    assert.ok(e);
+    done();
+  });
+});
 ```
