@@ -6,6 +6,7 @@ const originalConsoleError = console.error;
 console.error = () => {};
 
 process.send = mustCall((obj) => {
+  assert(obj.type === 'testname');
   assert(obj.testName === 'useCase truthy');
 });
 
@@ -15,6 +16,7 @@ test('useCase truthy', (resolve, reject) => {
 });
 
 process.send = mustCall((obj) => {
+  assert(obj.type === 'testname');
   assert(obj.testName === 'useCase falsy');
 });
 
@@ -39,4 +41,12 @@ test('must call', (resolve, reject) => {
   Promise.resolve(100).then(mustCall((value) => {
     assert(value !== 100);
   })) 
+});
+
+process.send = mustCall((obj) => {
+  assert(obj.testName === 'throw null');
+}, 3);
+
+test('throw null', (resolve, reject) => {
+  reject(null);
 });

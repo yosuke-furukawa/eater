@@ -1,5 +1,3 @@
-'use strict';
-
 const assert = require('power-assert');
 const Eater = require(`${process.cwd()}/lib/eater`);
 const mockReporter = {
@@ -9,22 +7,20 @@ const mockReporter = {
   reportTestName: (name) => {
     // do nothing
   },
-  reportFileNumber: (num) => {
-    assert(num === 1);
+  reportSubTestName: (name, parent) => {
+    assert(name === 'assert falsy');
   },
   reportFailure: (name) => {
-    assert(name === 'test/fixture/error.js');
+    assert(name === './test/fixture/failedRunner.js');
   },
-  reportFinish: (hasAnyError) => {
-    assert(hasAnyError);
-  }
+  reportSubFailure: (name) => {
+    assert(name === 'assert falsy');
+  },
 };
 const eater = new Eater({
   reporter: mockReporter, 
-  dir: 'test/fixture', 
-  ext: 'error.js',
+  dir: 'test/core', 
+  ext: '.nosuchfiles',
 });
-eater.eat();
-eater.on('err', (hasAnyError) => {
-  assert(hasAnyError === true);
-});
+eater.nextTest('./test/fixture/failedRunner.js');
+
