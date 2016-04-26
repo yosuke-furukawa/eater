@@ -24,6 +24,7 @@ const opts = (argv, execArgv, cwd) => {
   var execRequires = execArgv.require || [];
   var help = argv.help || argv.h;
   var version = argv.version || argv.v;
+  var targets = argv._;
 
   var Reporter = require('../lib/reporter/Reporter');
   if (mode === 'tap') {
@@ -57,6 +58,7 @@ const opts = (argv, execArgv, cwd) => {
     version: version,
     Reporter: Reporter,
     requires: requires,
+    targets: targets,
   };
 };
 

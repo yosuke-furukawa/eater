@@ -48,6 +48,26 @@ $ eater
 
 ![image](./images/screenshot.png)
 
+## eater `--dir` and `--ext`
+
+eater searches JavaScript files under `process.cwd()/test` dir by default. If you want to change the dir, use `--dir` option.
+
+```
+$ eater --dir spec/
+```
+
+And if you changed test file extension, like `.jsx/.es6/.test.js`, you use `--ext` option.
+
+```
+$ eater --ext jsx
+```
+
+### file
+
+```
+$ eater test/sometest.js test/foo.js test/bar.jd
+```
+
 ## If you are [power-assert](https://github.com/power-assert-js/power-assert) user
 
 ### 1. install `power-assert` and `espower-loader`

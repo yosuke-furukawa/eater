@@ -17,6 +17,7 @@ function showHelp() {
     eater --dir test/lib --ext .test.js --procs 10
     eater --require foo/bar
     eater --eaterrc example/dir/.eaterrc
+    eater test/foo.js test/bar.js test/buz.js
   `);
   process.exit(0);
 }
@@ -47,6 +48,7 @@ const eater = new Eater({
   ext: opts.ext,
   procs: opts.procs,
   requires: requires,
+  targets: opts.targets,
 });
 eater.eat();
 
