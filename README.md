@@ -19,7 +19,8 @@ If test file outputs `stderr` message, the test failed.
 - Easy mock: An eater test does not affect the other tests, but mock object sometimes kills your test.
 - Happy async: eater aims is here to handle async test well. Each eater files will run in `Node.js` child_process, so the tests always should be async first. If your tests mix sync and async tests, you will have a headache to maintain the tests.
 
-#Demo
+# [Demo](https://github.com/yosuke-furukawa/eater-demo)
+
 
 ![demo](https://github.com/yosuke-furukawa/eater-demo/raw/master/images/eater-demo.gif)
 
