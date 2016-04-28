@@ -122,13 +122,27 @@ require('babel-register')({
 $ eater --require ./script/enable-babel.js
 ```
 
-Note: if you are power-assert and babel user:
+## if you are power-assert and babel user:
+
+### 1. install babel-preset-power-assert
 
 ```
-$ npm install espower-babel -D
-$ eater --require espower-babel/guess
+$ npm install babel-preset-power-assert -D
 ```
 
+### 2. write your .babelrc
+
+```
+{
+  "presets": ["es2015", "babel-preset-power-assert"]
+}
+```
+
+### 3. run tests with `--require`
+
+```
+$ eater --require ./script/enable-babel.js
+```
 
 ## Coverage
 
