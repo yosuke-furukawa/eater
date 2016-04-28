@@ -2,5 +2,5 @@ const assert = require('power-assert');
 
 require('./babel');
 
-assert.ok('pass');
+assert('pass' == 'pass');
 
