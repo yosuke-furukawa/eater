@@ -23,6 +23,7 @@ If test file outputs `stderr` message, the test failed.
 
 
 ![demo](https://github.com/yosuke-furukawa/eater-demo/raw/master/images/eater-demo.gif)
+![pacman](https://raw.githubusercontent.com/yosuke-furukawa/eater-pacman-reporter/master/images/pacman.gif)
 
 #How to use
 
