@@ -23,7 +23,6 @@ If test file outputs `stderr` message, the test failed.
 
 
 ![demo](https://github.com/yosuke-furukawa/eater-demo/raw/master/images/eater-demo.gif)
-![pacman](https://raw.githubusercontent.com/yosuke-furukawa/eater-pacman-reporter/master/images/pacman.gif)
 
 #How to use
 
@@ -235,3 +234,12 @@ test('you need to failed test, you should use fail', (done, fail) => {
   });
 });
 ```
+
+# Use custom reporter
+
+```
+$ npm install eater-pacman-reporter
+$ eater --require eater-pacman-reporter
+```
+
+![pacman](https://raw.githubusercontent.com/yosuke-furukawa/eater-pacman-reporter/master/images/pacman.gif)
