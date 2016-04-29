@@ -239,7 +239,7 @@ test('you need to failed test, you should use fail', (done, fail) => {
 
 ```
 $ npm install eater-pacman-reporter
-$ eater --require eater-pacman-reporter
+$ eater --reporter eater-pacman-reporter
 ```
 
 ![pacman](https://raw.githubusercontent.com/yosuke-furukawa/eater-pacman-reporter/master/images/pacman.gif)
