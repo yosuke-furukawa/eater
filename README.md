@@ -4,7 +4,7 @@ Eater
 [![Build Status](https://travis-ci.org/yosuke-furukawa/eater.svg?branch=master)](https://travis-ci.org/yosuke-furukawa/eater)
 [![Coverage Status](https://coveralls.io/repos/github/yosuke-furukawa/eater/badge.svg?branch=master)](https://coveralls.io/github/yosuke-furukawa/eater?branch=master)
 
-![logo](./images/eater.png)
+![logo](https://github.com/yosuke-furukawa/eater/raw/master/images/eater.png)
 
 Eater is **Ea** sy **t** est runn **er** .
 Eater has one simple rule.
@@ -46,7 +46,7 @@ assert(1 === 2); // always failure
 $ eater
 ```
 
-![image](./images/screenshot.png)
+![image](https://github.com/yosuke-furukawa/eater/raw/master/images/screenshot.png)
 
 ## eater `--dir` and `--ext`
 
@@ -93,7 +93,7 @@ require('espower-loader')({
 $ eater --require ./script/enable-power-assert.js
 ```
 
-![power-assert](./images/powerassert.png)
+![power-assert](https://github.com/yosuke-furukawa/eater/raw/master/images/powerassert.png)
 
 ## If you are babel(JSX) user
 
