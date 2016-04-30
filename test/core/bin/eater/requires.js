@@ -5,30 +5,30 @@ const result = cp.execSync(`
   ${process.cwd()}/bin/eater.js --require test/fixture/success.js --dir test/fixture/ --ext success.js --procs 10 --mode tap
 `).toString();
 
-assert(result.indexOf(`success!!`) !== -1);
-assert(result.indexOf(`1..1`) !== -1);
-assert(result.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(result.match(/success!!/));
+assert(result.match(/1\.\.1/));
+assert(result.match(/ok 1 test\/fixture\/success\.js/));
 
 const hasDotResult = cp.execSync(`
   ${process.cwd()}/bin/eater.js --require ./test/fixture/success.js --dir test/fixture/ --ext success.js --procs 10 --mode tap
 `).toString();
 
-assert(hasDotResult.indexOf(`success!!`) !== -1);
-assert(hasDotResult.indexOf(`1..1`) !== -1);
-assert(hasDotResult.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(hasDotResult.match(/success!!/));
+assert(hasDotResult.match(/1\.\.1/));
+assert(hasDotResult.indexOf(`ok 1 test/fixture/success.js`) !== -1);
 
 const withoutJSResult = cp.execSync(`
   ${process.cwd()}/bin/eater.js --require test/fixture/success --dir test/fixture/ --ext success.js --procs 10 --mode tap
 `).toString();
 
-assert(withoutJSResult.indexOf(`success!!`) !== -1);
-assert(withoutJSResult.indexOf(`1..1`) !== -1);
-assert(withoutJSResult.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(withoutJSResult.match(/success!!/));
+assert(withoutJSResult.match(/1\.\.1/));
+assert(withoutJSResult.indexOf(`ok 1 test/fixture/success.js`) !== -1);
 
 const coloResult = cp.execSync(`
   ${process.cwd()}/bin/eater.js --require colo --dir test/fixture/ --ext success.js --procs 10 --mode tap
 `).toString();
 
 assert(coloResult.indexOf(`1..1`) !== -1);
-assert(coloResult.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(coloResult.indexOf(`ok 1 test/fixture/success.js`) !== -1);
 

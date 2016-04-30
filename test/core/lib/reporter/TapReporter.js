@@ -3,7 +3,7 @@ const TapReporter = require(`${process.cwd()}/lib/reporter/TapReporter`);
 const reporter = new TapReporter();
 
 console.log = (message) => {
-  assert(message.indexOf('1..123') !== -1);
+  assert(message === 'TAP version 13\n1..123');
 };
 
 reporter.reportFileNumber(123);

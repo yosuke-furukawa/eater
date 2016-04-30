@@ -7,4 +7,4 @@ const result = cp.execSync(`
 
 assert(result.indexOf(`success!!`) !== -1);
 assert(result.indexOf(`1..1`) !== -1);
-assert(result.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(result.indexOf(`ok 1 test/fixture/success.js`) !== -1);

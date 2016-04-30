@@ -3,7 +3,7 @@ const assert = require('power-assert');
 
 const result = cp.execSync(`${process.cwd()}/bin/eater.js --mode tap --dir test/fixture/ --ext success.js`).toString();
 
-assert(result.indexOf(`1..1`) !== -1);
-assert(result.indexOf(`ok test/fixture/success.js`) !== -1);
+assert(result.match(/1\.\.1/));
+assert(result.match(/ok 1 test\/fixture\/success\.js/));
 
 
