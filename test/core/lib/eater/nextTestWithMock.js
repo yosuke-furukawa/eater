@@ -31,16 +31,18 @@ const mockReporter = {
     assert(name === 'test');
     assert(parent === './test/fixture/success.js');
   }),
-  reportSubSuccess: mustCall((name) => {
+  reportSubSuccess: mustCall((name, parent) => {
     assert(name === 'test');
+    assert(parent === './test/fixture/success.js');
   }),
-  reportSubFailure: mustCall((name) => {
+  reportSubFailure: mustCall((name, parent) => {
     assert(name === 'test');
+    assert(parent === './test/fixture/success.js');
   }),
 };
 const eater = new Eater({
-  reporter: mockReporter, 
-  dir: 'test/core', 
+  reporter: mockReporter,
+  dir: 'test/core',
   ext: '.nosuchfiles',
 });
 eater.files = ['./test/fixture/success.js'];
