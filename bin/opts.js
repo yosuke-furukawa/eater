@@ -6,7 +6,7 @@ const fs = require('fs');
 const JSON5 = require('json5');
 
 const opts = (argv, execArgv, cwd) => {
-  const eaterrcFile = argv.eaterrc || path.join(cwd, '.eaterrc'); 
+  const eaterrcFile = argv.eaterrc || path.join(cwd, '.eaterrc');
   var eaterrc = {};
   if (existsSync(eaterrcFile)) {
     eaterrc = JSON5.parse(fs.readFileSync(eaterrcFile).toString());
@@ -33,7 +33,8 @@ const opts = (argv, execArgv, cwd) => {
 
   if (reporter) {
     try {
-      Reporter = require(reporter);
+      const obj = require(reporter);
+      Reporter = obj && obj.__esModule ? obj['default'] : obj;
     } catch(e) {
       console.error(colo.red.bold(e.toString()));
       process.exit(1);
