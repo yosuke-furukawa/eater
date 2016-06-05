@@ -243,3 +243,8 @@ $ eater --reporter eater-pacman-reporter
 ```
 
 ![pacman](https://raw.githubusercontent.com/yosuke-furukawa/eater-pacman-reporter/master/images/pacman.gif)
+
+## Custom Reporters
+
+- [eater-pacman-reporter](https://npmjs.com/package/eater-pacman-reporter)
+- [eater-b-reporter](https://npmjs.com/package/eater-b-reporter)
