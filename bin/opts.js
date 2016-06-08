@@ -15,7 +15,6 @@ const opts = (argv, execArgv, cwd) => {
     const eaterPackage = require(`${cwd}/package.json`).eater || {};
     eaterrc = Object.assign(eaterrc, eaterPackage);
   }
-  var mode = argv.mode || eaterrc.mode || 'default';
   var reporter = argv.reporter || eaterrc.reporter;
   var dir = argv.dir || eaterrc.dir || 'test/';
   var ext = argv.ext || eaterrc.ext || '.js';
@@ -27,9 +26,6 @@ const opts = (argv, execArgv, cwd) => {
   var targets = argv._;
 
   var Reporter = require('../lib/reporter/Reporter');
-  if (mode === 'tap') {
-    Reporter = require('../lib/reporter/TapReporter');
-  }
 
   if (reporter) {
     try {
@@ -51,7 +47,6 @@ const opts = (argv, execArgv, cwd) => {
   Array.prototype.push.apply(requires, execRequires);
 
   return {
-    mode: mode,
     dir: dir,
     ext: ext,
     procs: procs,

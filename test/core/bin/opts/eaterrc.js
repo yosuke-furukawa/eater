@@ -9,12 +9,9 @@ var result = opts(argv, {}, process.cwd());
 assert.deepEqual(result.requires, ["test/fixture/success.js", "colo"]);
 
 result = opts({}, {}, __dirname);
-assert(result.mode === "tap");
-
-result = opts({}, {}, __dirname);
-assert(result.mode === "tap");
+assert(result.Reporter); // eater-tap-reporter
 assert(result.dir === "test/core");
 
 result = opts({}, {}, `${__dirname}/nopackage`);
-assert(result.mode === 'default');
+assert(result.Reporter); // default reporter `'../lib/reporter/Reporter'`
 assert(result.dir === 'test/');
