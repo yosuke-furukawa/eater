@@ -246,5 +246,6 @@ $ eater --reporter eater-pacman-reporter
 
 ## Custom Reporters
 
+- [eater-tap-reporter](https://npmjs.com/package/eater-tap-reporter)
 - [eater-pacman-reporter](https://npmjs.com/package/eater-pacman-reporter)
 - [eater-b-reporter](https://npmjs.com/package/eater-b-reporter)
