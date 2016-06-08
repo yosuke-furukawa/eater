@@ -176,7 +176,6 @@ eater reads the arguments from settings.
   },
   "eater": {
     "dir": "test/core",
-    "mode": "tap",
     "require": [
       "./enable-power-assert.js",
       "./enable-jsx.js"
@@ -191,7 +190,6 @@ eater reads the arguments from settings.
 
 ```js
 {
-  mode: "tap",
   dir: "test/core",
   require: [
     "./enable-power-assert.js",
@@ -246,5 +244,6 @@ $ eater --reporter eater-pacman-reporter
 
 ## Custom Reporters
 
+- [eater-tap-reporter](https://npmjs.com/package/eater-tap-reporter)
 - [eater-pacman-reporter](https://npmjs.com/package/eater-pacman-reporter)
 - [eater-b-reporter](https://npmjs.com/package/eater-b-reporter)
