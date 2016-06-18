@@ -11,7 +11,7 @@ const mockReporter = {
     // do nothing
   },
   reportSuccess: (name) => {
-    assert(name === './test/fixture/success.js');
+    assert(name.match(/.[/\\]test[/\\]fixture[/\\]success\.js/));
   },
   reportFinish: (hasAnyError) => {
     assert(!hasAnyError);

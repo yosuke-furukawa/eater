@@ -3,8 +3,8 @@ const assert = require('power-assert');
 
 const result = cp.execSync(`
   node --require ./test/fixture/success.js ${process.cwd()}/bin/eater.js --dir test/fixture/ --ext success.js --procs 10 --reporter eater-tap-reporter
-`).toString();
+`.trim()).toString();
 
-assert(result.indexOf(`success!!`) !== -1);
-assert(result.indexOf(`1..1`) !== -1);
-assert(result.indexOf(`ok 1 test/fixture/success.js`) !== -1);
+assert(result.match(/success!!/));
+assert(result.match(/1\.\.1/));
+assert(result.match(/ok 1 test[/\\]fixture[/\\]success\.js/));
