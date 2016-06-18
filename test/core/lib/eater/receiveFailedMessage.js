@@ -11,11 +11,11 @@ const mockReporter = {
     assert(name === 'assert falsy');
   },
   reportFailure: (name) => {
-    assert(name === './test/fixture/failedRunner.js');
+    assert(name.match(/.[/\\]test[/\\]fixture[/\\]failedRunner\.js/));
   },
   reportSubFailure: (name, parent) => {
     assert(name === 'assert falsy');
-    assert(parent === './test/fixture/failedRunner.js');
+    assert(parent.match(/.[/\\]test[/\\]fixture[/\\]failedRunner\.js/));
   },
 };
 const eater = new Eater({

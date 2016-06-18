@@ -8,11 +8,11 @@ const mockReporter = {
     // do nothing
   },
   reportSubTestName: (name, parent) => {
-    assert(parent === './test/fixture/runner.js');
+    assert(parent.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
     assert(name === 'assert truthy');
   },
   reportSuccess: (name) => {
-    assert(name === './test/fixture/runner.js');
+    assert(name.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
   },
   reportSubSuccess: (name) => {
     assert(name === 'assert truthy');

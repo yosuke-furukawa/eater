@@ -29,15 +29,15 @@ const mockReporter = {
   },
   reportSubTestName: mustCall((name, parent) => {
     assert(name === 'test');
-    assert(parent === './test/fixture/success.js');
+    assert(parent.match(/.[/\\]test[/\\]fixture[/\\]success\.js/));
   }),
   reportSubSuccess: mustCall((name, parent) => {
     assert(name === 'test');
-    assert(parent === './test/fixture/success.js');
+    assert(parent.match(/.[/\\]test[/\\]fixture[/\\]success\.js/));
   }),
   reportSubFailure: mustCall((name, parent) => {
     assert(name === 'test');
-    assert(parent === './test/fixture/success.js');
+    assert(parent.match(/.[/\\]test[/\\]fixture[/\\]success\.js/));
   }),
 };
 const eater = new Eater({
