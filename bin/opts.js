@@ -18,6 +18,7 @@ const opts = (argv, execArgv, cwd) => {
   var reporter = argv.reporter || eaterrc.reporter;
   var dir = argv.dir || eaterrc.dir || 'test/';
   var ext = argv.ext || eaterrc.ext || '.js';
+  var pattern = argv.pattern || eaterrc.pattern;
   var procs = Number(argv.procs) || Number(eaterrc.procs) || 0;
   var requires = argv.require || eaterrc.require || [];
   var execRequires = execArgv.require || [];
@@ -49,6 +50,7 @@ const opts = (argv, execArgv, cwd) => {
   return {
     dir: dir,
     ext: ext,
+    pattern: pattern,
     procs: procs,
     help: help,
     version: version,

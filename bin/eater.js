@@ -9,12 +9,13 @@ const opts = require('./opts')(argv, execArgv, process.cwd());
 
 function showHelp() {
   console.log(`
-    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--reporter fooreporter] [--procs max process number default cpu core num] [--require prerequire modules]
+    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--pattern test file path pattern like 'test/**/*.js'] [--reporter fooreporter] [--procs max process number default cpu core num] [--require prerequire modules]
     eater --dir test/lib
     eater --dir spec --ext .js
     eater --dir test/lib --ext .test.js
     eater --dir test/lib --ext .test.js --reporter SomeCustomReporter
     eater --dir test/lib --ext .test.js --procs 10
+    eater --pattern **/__test__/**/*.js
     eater --require foo/bar
     eater --eaterrc example/dir/.eaterrc
     eater test/foo.js test/bar.js test/buz.js

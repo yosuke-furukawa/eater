@@ -12,6 +12,10 @@ const listTestJsFiles = listupFiles('test/fixture', '.test.js');
 assert(listTestJsFiles.length === 1);
 assert(listTestJsFiles.some((file) => file.match(/test[/\\]fixture[/\\]test[/\\]aaa[/\\]bbb[/\\]c\.test.js/)));
 
+const listPatternMatchFiles = listupFiles('', '', '**/__test__/**/*.js');
+assert(listPatternMatchFiles.length === 1);
+assert(listPatternMatchFiles.some((file) => file.match(/test[/\\]fixture[/\\]__test__[/\\]b.js/)));
+
 assert.throws(() => {
   listupFiles('./test/fixture');
 }, /extension should be string/ );
@@ -19,3 +23,7 @@ assert.throws(() => {
 assert.throws(() => {
   listupFiles(null, '.js');
 }, /dir should be string/ );
+
+assert.throws(() => {
+  listupFiles('', '', 'test/foo/bar');
+}, /pattern should have magic glob chars/ );
