@@ -9,12 +9,13 @@ const opts = require('./opts')(argv, execArgv, process.cwd());
 
 function showHelp() {
   console.log(`
-    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--reporter fooreporter] [--procs max process number default cpu core num] [--require prerequire modules]
+    eater [--dir test directroy default 'test/'] [--ext test file extension default '.js'] [--glob find test files using glob pattern match like 'test/**/*.js'] [--reporter fooreporter] [--procs max process number default cpu core num] [--require prerequire modules]
     eater --dir test/lib
     eater --dir spec --ext .js
     eater --dir test/lib --ext .test.js
     eater --dir test/lib --ext .test.js --reporter SomeCustomReporter
     eater --dir test/lib --ext .test.js --procs 10
+    eater --glob **/__test__/**/*.js
     eater --require foo/bar
     eater --eaterrc example/dir/.eaterrc
     eater test/foo.js test/bar.js test/buz.js
@@ -46,6 +47,7 @@ const eater = new Eater({
   reporter: new opts.Reporter(),
   dir: opts.dir,
   ext: opts.ext,
+  glob: opts.glob,
   procs: opts.procs,
   requires: requires,
   targets: opts.targets,
