@@ -48,7 +48,7 @@ $ eater
 
 ![image](https://github.com/yosuke-furukawa/eater/raw/master/images/screenshot.png)
 
-## eater `--dir` and `--ext`
+## eater `--dir` and `--ext` and `--glob`
 
 eater searches JavaScript files under `process.cwd()/test` dir by default. If you want to change the dir, use `--dir` option.
 
@@ -60,6 +60,12 @@ And if you changed test file extension, like `.jsx/.es6/.test.js`, you use `--ex
 
 ```
 $ eater --ext jsx
+```
+
+eater can find test files using glob pattern match. you use `--glob` option.
+
+```
+$ eater --glob **/__test/**/*.js
 ```
 
 ### file

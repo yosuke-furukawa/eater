@@ -26,4 +26,4 @@ assert.throws(() => {
 
 assert.throws(() => {
   listupFiles('', '', 'test/foo/bar');
-}, /pattern should have magic glob chars/ );
+}, /glob pattern should have magic glob chars/ );
