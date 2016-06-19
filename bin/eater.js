@@ -47,6 +47,7 @@ const eater = new Eater({
   reporter: new opts.Reporter(),
   dir: opts.dir,
   ext: opts.ext,
+  pattern: opts.pattern,
   procs: opts.procs,
   requires: requires,
   targets: opts.targets,
