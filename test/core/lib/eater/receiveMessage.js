@@ -1,22 +1,24 @@
+'use strict';
 const assert = require('power-assert');
+const mustCall = require('must-call');
 const Eater = require(`${process.cwd()}/lib/eater`);
 const mockReporter = {
-  setChildProc: (child) => {
+  setChildProc: mustCall((child) => {
     // do nothing
-  },
-  reportTestName: (name) => {
-    // do nothing
-  },
-  reportSubTestName: (name, parent) => {
+  }),
+  reportTestName: mustCall((name) => {
+    assert(name.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
+  }),
+  reportSubTestName: mustCall((name, parent) => {
     assert(parent.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
     assert(name === 'assert truthy');
-  },
-  reportSuccess: (name) => {
-    assert(name.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
-  },
-  reportSubSuccess: (name) => {
+  }),
+  reportSubSuccess: mustCall((name) => {
     assert(name === 'assert truthy');
-  },
+  }),
+  reportSuccess: mustCall((name) => {
+    assert(name.match(/.[/\\]test[/\\]fixture[/\\]runner\.js/));
+  }),
 };
 const eater = new Eater({
   reporter: mockReporter, 
