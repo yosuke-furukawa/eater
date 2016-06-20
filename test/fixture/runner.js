@@ -1,8 +1,7 @@
 const test = require(`${process.cwd()}/lib/runner`).test;
 const assert = require('power-assert');
 
-test('assert truthy', (done) => {
+test('assert truthy', () => {
   assert(true);
-  done();
 });
 

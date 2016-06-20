@@ -213,31 +213,21 @@ const calc = require('../foo/bar/calc');
 const test = require('eater/runner').test;
 const assert = require('assert');
 
-test('give 2 arguments return sum', (done) => {
+test('give 2 arguments return sum', () => {
   const result = calc.sum(1, 2);
   assert(result === 3);
-  done(); // eater is async friendly, you need to call done regardless of async / sync test.
 });
 
-test('give 2 arguments return sum on async', (done) => {
+test('give 2 arguments return sum on async', () => {
   const result = calc.sumAsync(1, 2);
   result.then((value) => {
     assert(value === 3)
-    done();
-  });
-});
-
-test('you need to failed test, you should use fail', (done, fail) => {
-  const result = calc.sumAsync(1, 2);
-  result.then((value) => {
-    assert(1 === 2)
-    fail('should not be reached');
-  }).catch((e) => {
-    assert.ok(e);
-    done();
   });
 });
 ```
+
+Note that each subtests also run as separated processes,
+you don't have to care about sync/async stuff.
 
 # Use custom reporter
 

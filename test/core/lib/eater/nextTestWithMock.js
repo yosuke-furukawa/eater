@@ -4,7 +4,11 @@ const assert = require('power-assert');
 const Eater = require(`${process.cwd()}/lib/eater`);
 const mockFork = () => {
   return {
+    stdout: {
+      setEncoding() {}
+    },
     stderr: {
+      setEncoding() {},
       on: () => {
         // do nothing
       }
