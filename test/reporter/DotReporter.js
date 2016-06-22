@@ -16,6 +16,8 @@ class DotReporter extends Reporter {
   reportSuccess(name) {
     console.log('.');
   }
+  reportFinish(hasAnyError, errors) {
+  }
 }
 
 module.exports = DotReporter;
