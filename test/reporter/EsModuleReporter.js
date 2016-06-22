@@ -16,6 +16,8 @@ class EsModuleReporter extends Reporter {
   reportSuccess(name) {
     console.log('o');
   }
+  reportFinish(hasAnyError, errors) {
+  }
 }
 
 Object.defineProperty(module.exports, "__esModule", { value: true });
