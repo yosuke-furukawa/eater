@@ -62,3 +62,8 @@ const child = {
   },
 };
 reporter.setChildProc(child);
+
+console.log = (message) => {
+  assert(message.indexOf('Total duration time:') !== -1);
+};
+reporter.reportFinish(false, []);
