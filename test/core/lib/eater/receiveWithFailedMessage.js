@@ -25,7 +25,7 @@ const mockReporter = {
     assert(name === 'async');
     ++subtests;
   }),
-  reportFailure: mustCall((name, error) => {
+  reportFailure: mustCall((name, out, error) => {
     assert(name.match(/.[/\\]test[/\\]fixture[/\\]runnerWithFailed\.js/));
     assert(error.match(/1 Subtest\(s\) failed/));
   }),
