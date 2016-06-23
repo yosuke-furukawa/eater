@@ -5,7 +5,10 @@ const Eater = require(`${process.cwd()}/lib/eater`);
 const mockFork = () => {
   return {
     stdout: {
-      setEncoding() {}
+      setEncoding() {},
+      on: () => {
+        // do nothing
+      }
     },
     stderr: {
       setEncoding() {},

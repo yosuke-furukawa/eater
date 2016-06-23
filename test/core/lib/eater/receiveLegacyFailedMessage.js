@@ -13,7 +13,7 @@ const mockReporter = {
     assert(name === 'explicitly fail');
     assert(parent.match(/.[/\\]test[/\\]fixture[/\\]legacyFailedRunner\.js/));
   }),
-  reportSubFailure: mustCall((name, parent, error) => {
+  reportSubFailure: mustCall((name, parent, out, error) => {
     assert(name === 'explicitly fail');
     assert(parent.match(/.[/\\]test[/\\]fixture[/\\]legacyFailedRunner\.js/));
     assert(error.match(/Subtest failed message/));
