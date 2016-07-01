@@ -29,6 +29,15 @@ console.log = (message) => {
 reporter.reportFailure('foobarbuz');
 
 console.log = (message) => {
+  assert(message.indexOf('failure') !== -1);
+  assert(message.indexOf('foobarbuz') !== -1);
+  assert(message.indexOf('out') !== -1);
+  assert(message.indexOf('error') !== -1);
+};
+
+reporter.reportFailure('foobarbuz', 'out', 'error');
+
+console.log = (message) => {
   assert(message.indexOf('success') !== -1);
   assert(message.indexOf('hogefuga') !== -1);
 };
@@ -38,9 +47,20 @@ reporter.reportSuccess('hogefuga');
 console.log = (message) => {
   assert(message.indexOf('failure') !== -1);
   assert(message.indexOf('foobarbuz') !== -1);
+  assert(message.indexOf('parent') !== -1);
+  assert(message.indexOf('out') !== -1);
+  assert(message.indexOf('error') !== -1);
 };
 
-reporter.reportSubFailure('foobarbuz');
+reporter.reportSubFailure('foobarbuz', 'parent', 'out', 'error');
+
+console.log = (message) => {
+  assert(message.indexOf('failure') !== -1);
+  assert(message.indexOf('foobarbuz') !== -1);
+  assert(message.indexOf('parent') !== -1);
+};
+
+reporter.reportSubFailure('foobarbuz', 'parent');
 
 console.log = (message) => {
   assert(message.indexOf('success') !== -1);
