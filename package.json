@@ -12,7 +12,7 @@
     "cov": "nyc npm-run-all test:core test:runner",
     "report": "nyc report --reporter=text-lcov",
     "coveralls": "npm-run-all cov report | coveralls",
-    "lint": "eslint lib/"
+    "lint": "eslint lib/ --fix"
   },
   "keywords": [
     "test",
