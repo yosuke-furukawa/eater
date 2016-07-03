@@ -103,18 +103,27 @@ $ eater --require ./script/enable-power-assert.js
 
 ## If you are babel(JSX) user
 
-### 1. install `babel-register`
+### 1. install `babel-register` or `active-cache-babel-register`
 
 ```
 $ npm install eater -D
 $ npm install babel-register -D
 ```
 
+or
+
+```
+$ npm install eater -D
+$ npm install active-cache-babel-register -D
+```
+
+Note: [active-cache-babel-register](https://github.com/yosuke-furukawa/active-cache-babel-register) improves babel  transpilation performance. 
+
 ### 2. enable `babel`
 
 ```js
 // script/enable-babel.js
-require('babel-register')({
+require('babel-register')({ // or to use require('active-cache-babel-register')
   ignore: (file) => {
     if (file.match(/node_modules/)) return true;
     return false;
