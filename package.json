@@ -5,13 +5,14 @@
   "main": "index.js",
   "bin": "./bin/eater.js",
   "scripts": {
-    "test": "npm-run-all test:*",
+    "test": "npm-run-all test:* lint",
     "test:core": "node bin/eater.js --dir test/core",
     "test:runner": "node bin/eater.js --dir test/runner",
     "test:babel": "node bin/eater.js --dir test/babel",
     "cov": "nyc npm-run-all test:core test:runner",
     "report": "nyc report --reporter=text-lcov",
-    "coveralls": "npm-run-all cov report | coveralls"
+    "coveralls": "npm-run-all cov report | coveralls",
+    "lint": "eslint lib/"
   },
   "keywords": [
     "test",
@@ -32,6 +33,7 @@
     "babel-register": "^6.7.2",
     "coveralls": "^2.11.9",
     "eater-tap-reporter": "^0.1.0",
+    "eslint": "^3.0.0",
     "espower-loader": "^1.0.0",
     "mock-require": "^1.2.1",
     "must-call": "^1.0.0",
