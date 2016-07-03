@@ -22,11 +22,24 @@ console.log = (message) => {
 reporter.reportSubTestName('foobarbuz', 'parent');
 
 console.log = (message) => {
+  assert(message.indexOf('Test Name : foobarbuz in parent 2nd') !== -1);
+};
+
+reporter.reportSubTestName('foobarbuz', 'parent');
+
+console.log = (message) => {
   assert(message.indexOf('failure') !== -1);
   assert(message.indexOf('foobarbuz') !== -1);
 };
 
 reporter.reportFailure('foobarbuz');
+
+console.log = (message) => {
+  assert(message.indexOf('no-such-failure-test') !== -1);
+  assert(message.indexOf('failure') !== -1);
+};
+
+reporter.reportFailure('no-such-failure-test');
 
 console.log = (message) => {
   assert(message.indexOf('failure') !== -1);
@@ -61,6 +74,14 @@ console.log = (message) => {
 };
 
 reporter.reportSubFailure('foobarbuz', 'parent');
+
+console.log = (message) => {
+  assert(message.indexOf('failure') !== -1);
+  assert(message.indexOf('foobarbuz2') !== -1);
+  assert(message.indexOf('parent') !== -1);
+};
+
+reporter.reportSubFailure('foobarbuz2', 'parent');
 
 console.log = (message) => {
   assert(message.indexOf('success') !== -1);
