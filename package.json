@@ -1,6 +1,6 @@
 {
   "name": "eater",
-  "version": "3.0.0-5",
+  "version": "3.0.0",
   "description": "eater is EAsy Test runnER",
   "main": "index.js",
   "bin": "./bin/eater.js",
