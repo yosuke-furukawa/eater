@@ -8,6 +8,7 @@
     "test": "npm-run-all test:* lint",
     "test:core": "node bin/eater.js --dir test/core",
     "test:runner": "node bin/eater.js --dir test/runner",
+    "test:env": "NODE_ENV=test node bin/eater.js --dir test/env",
     "test:babel": "node bin/eater.js --dir test/babel",
     "cov": "nyc npm-run-all test:core test:runner",
     "report": "nyc report --reporter=text-lcov",
