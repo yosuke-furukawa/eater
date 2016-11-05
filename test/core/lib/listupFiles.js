@@ -16,6 +16,10 @@ const listPatternMatchFiles = listupFiles('', '', '**/__test__/**/*.js');
 assert(listPatternMatchFiles.length === 1);
 assert(listPatternMatchFiles.some((file) => file.match(/test[/\\]fixture[/\\]__test__[/\\]b.js/)));
 
+const listOnlyFiles = listupFiles('./test/only', '.js');
+assert(listOnlyFiles.length === 1);
+assert(listOnlyFiles.some((file) => file.match(/test[/\\]only[/\\]only\.js/)));
+
 assert.throws(() => {
   listupFiles('./test/fixture');
 }, /extension should be string/ );
