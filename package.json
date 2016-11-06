@@ -11,7 +11,7 @@
     "test:env": "NODE_ENV=test node bin/eater.js --dir test/env",
     "test:babel": "node bin/eater.js --dir test/babel",
     "test:only": "node bin/eater.js --dir test/only",
-    "cov": "nyc npm-run-all test:core test:runner",
+    "cov": "nyc npm-run-all test:core test:runner test:only",
     "report": "nyc report --reporter=text-lcov",
     "coveralls": "npm-run-all cov report | coveralls",
     "lint": "eslint lib/ --fix"
