@@ -252,3 +252,37 @@ $ eater --reporter eater-pacman-reporter
 - [eater-tap-reporter](https://npmjs.com/package/eater-tap-reporter)
 - [eater-pacman-reporter](https://npmjs.com/package/eater-pacman-reporter)
 - [eater-b-reporter](https://npmjs.com/package/eater-b-reporter)
+
+# Exclusive feature
+
+The exclusivity feature allows you to run `only` the specified test code by adding `// eater:only` comment on top of your test code. Here's an example.
+
+```javascript
+// eater:only
+const test = require('eater/lib/runner').test;
+const mustCall = require('must-call');
+const assert = require('power-assert');
+
+test('only is executed', () => {
+  assert(true);
+});
+```
+
+And if you need to exclude your test case, `only` function is helpful.
+
+
+```javascript
+// eater:only
+const only = require('eater/lib/runner').only;
+const test = require('eater/lib/runner').test;
+const mustCall = require('must-call');
+const assert = require('power-assert');
+
+test('this test should not execute', (_, fail) =>{
+  fail('should not be executed');
+});
+
+only('only is executed', () => {
+  assert(true);
+});
+```
