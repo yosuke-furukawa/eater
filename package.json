@@ -33,7 +33,7 @@
     "babel-preset-es2015": "6.24.1",
     "babel-preset-power-assert": "3.0.0",
     "babel-register": "6.26.0",
-    "coveralls": "2.13.3",
+    "coveralls": "3.0.6",
     "eater-tap-reporter": "0.1.0",
     "eslint": "3.19.0",
     "espower-loader": "1.2.2",
