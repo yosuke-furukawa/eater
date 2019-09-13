@@ -26,7 +26,7 @@
     "colo": "^0.3.1",
     "exists-sync": "0.1.0",
     "glob": "^7.0.4",
-    "json5": "^0.5.0",
+    "json5": "^2.0.0",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
