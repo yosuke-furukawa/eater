@@ -35,7 +35,7 @@
     "babel-register": "6.26.0",
     "coveralls": "3.0.6",
     "eater-tap-reporter": "0.1.0",
-    "eslint": "6.3.0",
+    "eslint": "6.4.0",
     "espower-loader": "1.2.2",
     "mock-require": "3.0.3",
     "must-call": "1.0.0",
