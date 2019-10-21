@@ -10,4 +10,4 @@ const esModuleResult = cp.execSync(`node ${process.cwd()}/bin/eater.js --reporte
 assert(esModuleResult.trim() === 'o');
 
 const errResult = cp.spawnSync("node", [`${process.cwd()}/bin/eater.js`, "--reporter", "NotFoundReporter", "--dir", "test/fixture/", "--ext", "js"]);
-assert(errResult.stderr.toString().trim() === colo.red.bold("Error: Cannot find module 'NotFoundReporter'"));
+assert(errResult.stderr.toString().trim().indexOf("Error: Cannot find module 'NotFoundReporter'") >= 0);

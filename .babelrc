@@ -1,3 +1,7 @@
 {
-  "presets": ["es2015", "babel-preset-power-assert"]
+  "presets": [
+    [
+      "@babel/preset-env",
+    ]
+  ]
 }
