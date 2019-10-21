@@ -23,7 +23,7 @@
   "author": "yosuke-furukawa",
   "license": "MIT",
   "dependencies": {
-    "colo": "^0.3.1",
+    "colo": "^1.0.0",
     "exists-sync": "0.1.0",
     "glob": "^7.0.4",
     "json5": "^2.0.0",
