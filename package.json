@@ -30,8 +30,8 @@
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.9.5",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
     "@babel/register": "7.9.0",
     "core-js": "3.6.5",
     "coveralls": "3.0.11",
