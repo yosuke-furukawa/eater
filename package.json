@@ -30,9 +30,9 @@
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "@babel/core": "7.10.3",
-    "@babel/preset-env": "7.10.3",
-    "@babel/register": "7.10.3",
+    "@babel/core": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@babel/register": "7.10.4",
     "core-js": "3.6.5",
     "coveralls": "3.1.0",
     "eater-tap-reporter": "0.1.0",
