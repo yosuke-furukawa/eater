@@ -24,7 +24,7 @@ If test file outputs `stderr` message, the test failed.
 
 ![demo](https://github.com/yosuke-furukawa/eater-demo/raw/master/images/eater-demo.gif)
 
-#How to use
+# How to use
 
 ## 1. Install
 
