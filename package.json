@@ -25,7 +25,7 @@
   "dependencies": {
     "colo": "^1.0.0",
     "exists-sync": "0.1.0",
-    "glob": "^7.1.6",
+    "glob": "^8.0.0",
     "json5": "^2.1.2",
     "minimist": "^1.2.5"
   },
